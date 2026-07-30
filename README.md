@@ -134,7 +134,7 @@ Because this consumes an unofficial API, all route knowledge lives in two files 
 
 ## Compatibility
 
-Developed against txAdmin `master` as of July 2026 and verified against a live **txAdmin v8.0.1** panel. Tested on Node 18, 20 and 22.
+Developed against txAdmin `master` as of July 2026 and verified against a live **txAdmin v8.0.1** panel. Requires **Node 20 or newer**; tested on Node 20, 22 and 24.
 
 If a txAdmin update breaks something, `txadmin_whoami` is the fastest check — it exercises authentication, CSRF and permission reading in one call. Please open an issue with what it prints.
 

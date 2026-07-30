@@ -1,0 +1,50 @@
+{
+  "name": "txadmin-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for FiveM/RedM server administration through txAdmin",
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "fivem",
+    "redm",
+    "txadmin",
+    "fxserver",
+    "gta5",
+    "server-administration"
+  ],
+  "license": "MIT",
+  "author": "Saxx",
+  "type": "module",
+  "bin": {
+    "txadmin-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "smoke": "tsx scripts/smoke.ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "socket.io-client": "^4.8.1",
+    "undici": "^7.0.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "socket.io": "^4.8.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.2.4"
+  }
+}

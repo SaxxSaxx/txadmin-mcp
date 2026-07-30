@@ -30,11 +30,22 @@ describe('wrapUntrusted', () => {
 
 describe('stripAnsi', () => {
   it('removes colour codes', () => {
-    expect(stripAnsi('[31mred[0m')).toBe('red');
+    expect(stripAnsi('\x1b[31mred\x1b[0m')).toBe('red');
   });
 
   it('leaves plain text alone', () => {
     expect(stripAnsi('plain text')).toBe('plain text');
+  });
+
+  it('preserves FiveM bracket prefixes, which are text and not escape codes', () => {
+    // The regex must anchor on ESC. A looser "[...m" pattern would eat the
+    // "[s" here and leave "cript:chat]" — and FXServer output is full of these.
+    const line = '[script:chat] player joined [b2s] [1] [INFO]';
+    expect(stripAnsi(line)).toBe(line);
+  });
+
+  it('strips colour but keeps the bracket prefix on a realistic line', () => {
+    expect(stripAnsi('\x1b[32m[script:oxmysql]\x1b[0m ready')).toBe('[script:oxmysql] ready');
   });
 });
 

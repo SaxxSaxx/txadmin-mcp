@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-control-regex
-const ANSI = /\[[0-9;]*[A-Za-z]/g;
+const ANSI = /\x1b\[[0-9;]*[A-Za-z]/g;
 
 /** FXServer console output is colourised; the codes are pure token waste here. */
 export function stripAnsi(input: string): string {

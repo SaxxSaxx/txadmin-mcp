@@ -130,7 +130,7 @@ describe('read tools', () => {
   it('read_console strips ansi and marks output untrusted', async () => {
     const out = await tool('txadmin_read_console').run(
       { lines: 10 },
-      await ctx({ consoleBuffer: '[31mboom[0m' }),
+      await ctx({ consoleBuffer: '\x1b[31mboom\x1b[0m' }),
     );
     expect(out).toContain('boom');
     expect(out).not.toContain('[31m');

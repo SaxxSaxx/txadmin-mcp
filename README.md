@@ -156,7 +156,7 @@ If a txAdmin update breaks something, `txadmin_whoami` is the fastest check — 
 
 ```bash
 npm install
-npm test        # 101 tests, no FiveM server required
+npm test        # 103 tests, no FiveM server required
 npm run build
 ```
 

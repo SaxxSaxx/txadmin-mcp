@@ -168,6 +168,16 @@ To verify against a live panel (read-only, safe on production):
 TXADMIN_URL=http://127.0.0.1:40120 TXADMIN_USER=x TXADMIN_PASS=y npm run smoke
 ```
 
+### Releasing
+
+Releases publish from CI via npm [trusted publishing](https://docs.npmjs.com/trusted-publishers/) (OIDC) — no npm token is stored in this repository.
+
+```bash
+npm version patch && git push --follow-tags
+```
+
+The tag triggers `.github/workflows/release.yml`, which builds, runs the full suite, and publishes.
+
 ## License
 
 MIT

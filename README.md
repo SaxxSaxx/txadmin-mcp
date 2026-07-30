@@ -1,5 +1,7 @@
 # txadmin-mcp
 
+[![npm](https://img.shields.io/npm/v/txadmin-mcp)](https://www.npmjs.com/package/txadmin-mcp) [![CI](https://github.com/SaxxSaxx/txadmin-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/SaxxSaxx/txadmin-mcp/actions/workflows/ci.yml) [![license](https://img.shields.io/npm/l/txadmin-mcp)](LICENSE)
+
 An [MCP](https://modelcontextprotocol.io) server that lets an AI assistant read and administer a **FiveM / RedM** game server through [txAdmin](https://txadmin.gg).
 
 Ask "why is the server crashing?", "who's online?", "who banned Dave and why?" or "restart the chat resource" and get a real answer from the live server.
